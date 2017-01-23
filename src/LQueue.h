@@ -24,6 +24,14 @@ class Queue
 {
  public:
   /***** Function Members *****/
+   void move_to_front(const QueueElement & key);
+    /*-----------------------------------------------------------------------
+     Search through a queue for a particular key value, and if found, move the node
+     to the front of the same queue.
+     
+     Precondition:  Queue is nonempty.
+     Postcondition: A new node is added if the keyvalue has been found
+     -----------------------------------------------------------------------*/
 
   /***** Constructors *****/
   Queue();
