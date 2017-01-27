@@ -128,7 +128,7 @@ void Queue::dequeue()
       cerr << "*** Queue is empty -- can't remove a value ***\n";
 }
 
-void Queue::move_to_front(const QueueElement & value)
+void Queue::move_to_front(const QueueElement & key)
 {
   Queue::NodePointer prevPtr = 0;
   for (Queue::NodePointer ptr = myFront; ptr != 0; ptr = ptr->next) 
