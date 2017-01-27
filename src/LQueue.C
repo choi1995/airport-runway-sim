@@ -127,3 +127,23 @@ void Queue::dequeue()
    else
       cerr << "*** Queue is empty -- can't remove a value ***\n";
 }
+
+void Queue::move_to_front(const QueueElement & key)
+{
+  Queue::NodePointer prevPtr = 0;
+  for (Queue::NodePointer ptr = myFront; ptr != 0; ptr = ptr->next) 
+  {
+    if (ptr->data == value) {
+      if(ptr == myBack)
+        myBack = prevPtr;
+      prevPtr->next = ptr->next;
+      ptr->next = myFront;
+      myFront = ptr;
+
+      prevPtr = NULL:
+      ptr = NULL;
+      break;
+    }
+    prevPtr = ptr;
+  }
+}

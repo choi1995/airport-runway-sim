@@ -35,6 +35,7 @@ class Queue
      Postcondition: A new node is added if the keyvalue has been found
      -----------------------------------------------------------------------*/
     void merge_two_queues( Queue &q2);
+
     /*-----------------------------------------------------------------------
      Search through a queue for a particular key value, and if found, move the node
      to the front of the same queue.
@@ -143,7 +144,7 @@ class Queue
         Postcondition: A Node has been constructed with value in its 
              data part and its next part set to link (default 0).
        ------------------------------------------------------------------*/
-       { data = value; next = link;  }
+      { data = value; next = link; }
 
   };
 
