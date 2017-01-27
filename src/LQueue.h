@@ -35,7 +35,6 @@ class Queue
      Postcondition: A new node is added if the keyvalue has been found
      -----------------------------------------------------------------------*/
     void merge_two_queues( Queue &q2);
-
     /*-----------------------------------------------------------------------
      Search through a queue for a particular key value, and if found, move the node
      to the front of the same queue.
@@ -91,7 +90,7 @@ class Queue
     Postcondition: Returns true if queue is empty and false otherwise.
   -----------------------------------------------------------------------*/
 
-  void enqueue(const QueueElement & value);
+  void enqueue(const QueueElement & value, const int currentTime=-1);
   /*-----------------------------------------------------------------------
     Add a value to a queue.
 
@@ -119,6 +118,8 @@ class Queue
         "garbage value" is returned.
   -----------------------------------------------------------------------*/
 
+   int getArrivalTimeFromBack() const;
+   
   void dequeue();
   /*-----------------------------------------------------------------------
     Remove value at front of queue (if any).
@@ -136,15 +137,16 @@ class Queue
    {
     public:
       QueueElement data;
+      int arrivalTime;
       Node * next;
       //--- Node constructor
-      Node(QueueElement value, Node * link = 0)
+      Node(QueueElement value, int arrivalTime = -1, Node * link = 0)
       /*-------------------------------------------------------------------
         Precondition:  value and link are received
         Postcondition: A Node has been constructed with value in its 
              data part and its next part set to link (default 0).
        ------------------------------------------------------------------*/
-      { data = value; next = link; }
+      { data = value; next = link; arrivalTime = arrivalTime; }
 
   };
 
