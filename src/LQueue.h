@@ -9,6 +9,7 @@
     front:        Accesses the top queue value; leaves queue unchanged
     dequeue:      Modifies queue by removing the value at the front
     display:      Displays all the queue elements
+    move_to_front:
     Note: Execution terminates if memory isn't available for a queue element.
 ---------------------------------------------------------------------------*/
 
@@ -24,7 +25,17 @@ class Queue
 {
  public:
   /***** Function Members *****/
-   void move_to_front(const QueueElement & key);
+    
+    void move_to_front(const QueueElement & key);
+    /*-----------------------------------------------------------------------
+     Search through a queue for a particular key value, and if found, move the node
+     to the front of the same queue.
+     
+     Precondition:  Queue is nonempty.
+     Postcondition: A new node is added if the keyvalue has been found
+     -----------------------------------------------------------------------*/
+    void merge_two_queues( Queue &q2);
+
     /*-----------------------------------------------------------------------
      Search through a queue for a particular key value, and if found, move the node
      to the front of the same queue.
@@ -88,6 +99,7 @@ class Queue
     Postcondition: value is added at back of queue.               
   -----------------------------------------------------------------------*/
 
+
   void display(ostream & out) const;
   /*-----------------------------------------------------------------------
     Display values stored in the queue.
@@ -116,6 +128,7 @@ class Queue
         queue is empty; in that case, an error message is displayed 
         and execution allowed to proceed.
   -----------------------------------------------------------------------*/
+  
 
  private:
    /*** Node class ***/
