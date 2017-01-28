@@ -118,7 +118,7 @@ class Queue
         "garbage value" is returned.
   -----------------------------------------------------------------------*/
 
-   int getArrivalTimeFromBack() const;
+   int getArrivalTimeFromFront() const;
    
   void dequeue();
   /*-----------------------------------------------------------------------
@@ -146,7 +146,7 @@ class Queue
         Postcondition: A Node has been constructed with value in its 
              data part and its next part set to link (default 0).
        ------------------------------------------------------------------*/
-      { data = value; next = link; arrivalTime = arrivalTime; }
+      { data = value; next = link; this->arrivalTime = arrivalTime; }
 
   };
 

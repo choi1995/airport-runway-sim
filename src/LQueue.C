@@ -113,10 +113,10 @@ QueueElement Queue::front() const
    }
 }
 
-int Queue::getArrivalTimeFromBack() const
+int Queue::getArrivalTimeFromFront() const
 {
     if (!empty())
-        return (myBack->arrivalTime);
+        return (myFront->arrivalTime);
     else
     {
         return -1;

@@ -10,7 +10,7 @@ using namespace std;
 void print(Queue q)
 { q.display(cout); }
 
-int main(void)
+int main1(void)
 {
     Queue q1;
     cout << "Queue created.  Empty? " << boolalpha << q1.empty() << endl;
