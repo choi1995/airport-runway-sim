@@ -37,7 +37,7 @@ void AirportSim::run()
         if(runwayTime != 0 ) {
             runwayTime--;
             if(runwayTime == 0) {
-                runwayActionComplete();
+                printRunwayActionComplete();
             }
         }
         
@@ -48,7 +48,7 @@ void AirportSim::run()
         }
         
         if(runwayTime != 0) {
-            currentRunwayStatus();
+            printCurrentRunwayStatus();
         }
     }
     cout << endl;
@@ -75,7 +75,7 @@ void AirportSim::askForParameters()
     cin >>simDuration;
 }
 
-void AirportSim::runwayActionComplete()
+void AirportSim::printRunwayActionComplete()
 {
     string planeMotion;
     int queueNum;
@@ -139,7 +139,7 @@ void AirportSim::handleTraffic(const int currentTime)
     }
 }
 
-void AirportSim::currentRunwayStatus()
+void AirportSim::printCurrentRunwayStatus()
 {
     string planeMotion;
     if(isLanding){

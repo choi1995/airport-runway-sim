@@ -49,10 +49,10 @@ private:
     int maxPlanesInTakeoffQueue = 0;
     
     void askForParameters();
-    void runwayActionComplete();
+    void printRunwayActionComplete();
     void randomTrafficGenerator(const int currentTime);
     void handleTraffic(const int currentTime);
-    void currentRunwayStatus();
+    void printCurrentRunwayStatus();
     void generateStats();
 };
 
