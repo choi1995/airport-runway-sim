@@ -51,7 +51,6 @@ void AirportSim::run()
             printCurrentRunwayStatus();
         }
     }
-    cout << endl;
     
     generateStats();
     cout << "End of Program" << endl;
@@ -152,6 +151,8 @@ void AirportSim::printCurrentRunwayStatus()
 
 void AirportSim::generateStats()
 {
+    cout << endl;
+    cout << "STATISTICS" << endl;
     cout << "Maximum number of planes in Landing queue was: " << maxPlanesInLandingQueue << endl;
     
     cout << "Average Minutes spent waiting to land: ";

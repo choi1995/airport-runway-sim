@@ -138,93 +138,63 @@ void Queue::dequeue()
       cerr << "*** Queue is empty -- can't remove a value ***\n";
 }
 
-void Queue::move_to_front(const QueueElement & key){
-        Queue::NodePointer sptr = myFront;
-        Queue::NodePointer kptr = new Queue::Node(key);
-        for (sptr = myFront; sptr != 0; sptr = sptr->next){
-            if (sptr->data==key){
-                kptr->next=myFront;
-                myFront=kptr;
-            }
+void Queue::move_to_front(const QueueElement & key)
+{
+    Queue::NodePointer prevPtr = 0;
+    for (Queue::NodePointer ptr = myFront; ptr != 0; ptr = ptr->next)
+    {
+        if (ptr->data == key) {
+            if(ptr == myBack)
+                myBack = prevPtr;
+            prevPtr->next = ptr->next;
+            ptr->next = myFront;
+            myFront = ptr;
+            
+            prevPtr = NULL;
+            ptr = NULL;
+            break;
         }
+        prevPtr = ptr;
+    }
 }
 
-void Queue::merge_two_queues( Queue &q2){
-    Queue::NodePointer curr1;
-    Queue::NodePointer curr2;
-    Queue::NodePointer curr3;
-    Queue temp;
-    if (empty()){                       // if q1 empty
-        myFront=q2.myFront;
-        myBack=q2.myBack;
-        q2.myFront=NULL;
-        q2.myBack=NULL;
-    }
-    else if (q2.empty()){               // if q2 empty
-        return;
-    }
+void Queue::merge_two_queues( Queue & q2)
+{
+    Queue::NodePointer refPtr = myFront;
+    Queue::NodePointer q1PrevPtr = 0;
     
-    // ignore
-   /* else{
-        for(curr2=q2.myFront;(curr2->next)!=0;curr2=curr2->next){
-            for(curr1=myFront; (curr1->next)!=0; curr1=curr1->next){
-                if(((curr2->data)<=(curr1->next->data))&&((curr2->data) > (curr1->data))){
-                    Queue::NodePointer temp = new Queue::Node(curr2->data);
-                    temp->data=curr2->data;
-                    temp->next=curr1->next;
-                    curr1->next=temp;
+    Queue::NodePointer q2Ptr = q2.myFront;
+    
+    while(q2Ptr != 0)
+    {
+        Queue::NodePointer nextPtr = q2Ptr->next;
+        if(empty()){
+            // TODO: equate q1 to q2
+        }else {
+            for(Queue::NodePointer q1Ptr = refPtr; q1Ptr != 0; q1Ptr = q1Ptr->next)
+            {
+                if(q2Ptr->data < q1Ptr->data)
+                {
+                    q2.myFront = q2Ptr->next;
+                    
+                    q2Ptr->next = q1Ptr;
+                    if(q1PrevPtr == 0){
+                        myFront = q2Ptr;
+                    } else {
+                        q1PrevPtr->next = q2Ptr;
+                    }
+                    refPtr = q1Ptr;
+                    q1PrevPtr = q2Ptr;
+                    break;
+                } else if(q1Ptr->next == 0) {
+                    myBack->next = q2.myFront;
+                    myBack = q2.myBack;
                 }
-                   }
-                   }
-        }
-   // while (!q2.empty()){
-  //      q2.dequeue();
-  //  }
-    */
-    else{                               // other cases
-        curr2=q2.myFront;
-        curr1=myFront;
-        while(curr1!=0&&curr2!=0){
-            if((curr2->data)<(curr1->data)){
-                Queue::NodePointer tn = new Queue::Node(curr2->data);
-                temp.enqueue(tn->data);
-                curr2=curr2->next;
+                q1PrevPtr = q1Ptr;
             }
-            else{
-                Queue::NodePointer tn = new Queue::Node(curr1->data);
-                temp.enqueue(tn->data);
-                curr1=curr1->next;
-            }
-        }                              //basically compare two value and add to temp
-        
-        // put what's left to temp. At lease one of curr1 and curr2 is zero so we can jsut use two while loop
-        while(curr1!=0){
-            temp.enqueue(curr1->data);
-            curr1=curr1->next;
         }
-        
-        while(curr2!=0){
-            temp.enqueue(curr2->data);
-            curr2=curr2->next;
-        }
-
-    
-        // clean q1 and q2
-        
+        q2Ptr = nextPtr;
     }
-    while (!q2.empty()){
-             q2.dequeue();
-         }
-    while(!this->empty()){
-        this->dequeue();
-    }
-    
-        // put everything in temp to q1
-    curr3=temp.myFront;
-    while(curr3){
-        this->enqueue(curr3->data);
-        curr3=curr3->next;
-    }
-    
+    q1PrevPtr = NULL;
+    refPtr = NULL;
 }
-

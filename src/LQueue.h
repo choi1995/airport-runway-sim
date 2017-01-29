@@ -118,7 +118,7 @@ class Queue
         "garbage value" is returned.
   -----------------------------------------------------------------------*/
 
-   int getArrivalTimeFromFront() const;
+  int getArrivalTimeFromFront() const;
    
   void dequeue();
   /*-----------------------------------------------------------------------
@@ -129,6 +129,8 @@ class Queue
         queue is empty; in that case, an error message is displayed 
         and execution allowed to proceed.
   -----------------------------------------------------------------------*/
+    
+    
   
 
  private:
