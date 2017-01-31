@@ -47,13 +47,15 @@ int main(void)
     //system("PAUSE");
     
     //add nodes to q2 testing part (b)
-    cout<<endl<< "********** Testing1 for Merge **********"<<endl;
+    cout<<endl<< "********** Testing for Merge **********"<<endl;
     cout<<"Original Queue(q1):"<<endl;
     print(q1);
     cout<<"Queue to be added (q2)"<<endl;
+    q2.enqueue(10);
+    q2.enqueue(50);
     q2.enqueue(300);
     q2.enqueue(400);
-    //q2.enqueue(500);
+    q2.enqueue(500);
     print(q2);
     q1.merge_two_queues(q2);
     cout << "Merged Queue(q1): " << endl;
@@ -61,6 +63,18 @@ int main(void)
     cout << "Old Queue (q2): " << endl;
     print(q2);
     cout << "Queue q2 empty? " << q2.empty() << endl;
+    
+     cout<<endl<< "********** Testing for Move_to_front **********"<<endl;
+    cout<<"Queue to be searched(q1)"<<endl;
+    print(q1);
+    
+    q1.move_to_front(200);
+    q1.move_to_front(400);
+    q1.move_to_front(30);
+    q1.move_to_front(600);
+    
+    cout<<"q1 now: "<<endl;
+    print(q1);
     
    
     return 0;
