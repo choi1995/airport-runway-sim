@@ -6,10 +6,11 @@
 //  Copyright © 2017 Ruishen. All rights reserved.
 //
 //
+/*
 #include "AirportSim.h"
 
 int main (void){
     AirportSim airportSimulator;
     airportSimulator.run();
 }
-
+*/

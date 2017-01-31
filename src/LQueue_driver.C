@@ -47,15 +47,21 @@ int main(void)
     //system("PAUSE");
     
     //add nodes to q2 testing part (b)
+    cout<<endl<< "********** Testing1 for Merge **********"<<endl;
+    cout<<"Original Queue(q1):"<<endl;
+    print(q1);
+    cout<<"Queue to be added (q2)"<<endl;
     q2.enqueue(2);
     q2.enqueue(99);
     q2.enqueue(202);
     print(q2);
     q1.merge_two_queues(q2);
-    cout << "Merged Queue: " << endl;
+    cout << "Merged Queue(q1): " << endl;
     print(q1);
-    cout << "Old Queue: " << endl;
+    cout << "Old Queue (q2): " << endl;
     print(q2);
     cout << "Queue q2 empty? " << q2.empty() << endl;
+    
+   
     return 0;
 }
