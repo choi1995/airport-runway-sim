@@ -1,0 +1,111 @@
+*****************************************
+merge_two_queues Test1:
+
+  Original Queue(q1):
+
+Queue to be added (q2)
+2  99  202  
+Merged Queue(q1): 
+2  99  202  
+Old Queue (q2): 
+
+Queue q2 empty? true
+
+*****************************************
+merge_two_queues Test2:
+
+Original Queue(q1):
+100  200  300  400  500  600  700  800  900  1000  
+Queue to be added (q2)
+300  400  
+Merged Queue(q1): 
+100  200  300  300  400  400  500  600  700  800  900  1000  
+Old Queue (q2): 
+
+Queue q2 empty? true
+
+*****************************************
+merge_two_queues Test3:
+
+Original Queue(q1):
+100  
+Queue to be added (q2)
+300  400  
+Merged Queue(q1): 
+100  300  400  
+Old Queue (q2): 
+
+Queue q2 empty? true
+
+*****************************************
+merge_two_queues Test4:
+
+Original Queue(q1):
+100  200  300  
+Queue to be added (q2)
+10  50  300  400  500  
+Merged Queue(q1): 
+10  50  100  200  300  300  400  500  
+Old Queue (q2): 
+
+Queue q2 empty? true
+
+*****************************************
+merge_two_queues Test4:
+
+Original Queue(q1):
+100  200  300  400  500  600  700  
+Queue to be added (q2)
+10  50  300  400  500  
+Merged Queue(q1): 
+10  50  100  200  300  300  400  400  500  500  600  700  
+Old Queue (q2): 
+
+Queue q2 empty? true
+
+
+*****************************************
+*****************************************
+*****************************************
+*****************************************
+
+move_to_front Test1
+
+Queue to be searched(q1)
+10  50  100  200  300  300  400  400  500  500  600  700  
+value searched :
+200,400,30,600
+q1 now: 
+600  400  200  10  50  100  300  300  400  500  500  700  
+
+*****************************************
+move_to_front Test2
+
+Queue to be searched(q1)
+10  50  100  200  300  300  400  400  500  500  600  700  
+value searched :
+200,200,800,700
+q1 now: 
+700  200  10  50  100  300  300  400  400  500  500  600  
+
+*****************************************
+move_to_front Test3
+
+Queue to be searched(q1)
+10  50  100  200  300  300  400  400  500  500  600  700  
+value searched :
+200,200,800,700
+q1 now: 
+700  200  10  50  100  300  300  400  400  500  500  600  
+
+*****************************************
+move_to_front Test4
+
+Queue to be searched(q1)
+100  
+value searched :
+100
+q1 now: 
+100  
+
+
