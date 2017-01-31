@@ -51,9 +51,9 @@ int main(void)
     cout<<"Original Queue(q1):"<<endl;
     print(q1);
     cout<<"Queue to be added (q2)"<<endl;
-    q2.enqueue(2);
-    q2.enqueue(99);
-    q2.enqueue(202);
+    q2.enqueue(300);
+    q2.enqueue(400);
+    //q2.enqueue(500);
     print(q2);
     q1.merge_two_queues(q2);
     cout << "Merged Queue(q1): " << endl;

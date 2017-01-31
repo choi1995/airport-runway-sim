@@ -190,14 +190,16 @@ void Queue::merge_two_queues( Queue & q2)
                 } else if(q1Ptr->next == 0) {
                     myBack->next = q2.myFront;
                     myBack = q2.myBack;
-                    q2.myFront=NULL;
-                    q2.myBack=NULL;
+                    nextPtr = NULL;
+                    break;
                 }
                 q1PrevPtr = q1Ptr;
             }
         }
         q2Ptr = nextPtr;
     }
+    q2.myFront=NULL;
+    q2.myBack=NULL;
     q1PrevPtr = NULL;
     refPtr = NULL;
 }
