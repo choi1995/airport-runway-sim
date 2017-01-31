@@ -81,9 +81,9 @@ bool Queue::empty() const
 }
 
 //--- Definition of enqueue()
-void Queue::enqueue(const QueueElement & value)
+void Queue::enqueue(const QueueElement & value, const int currentTime)
 {
-   Queue::NodePointer newptr = new Queue::Node(value);
+   Queue::NodePointer newptr = new Queue::Node(value, currentTime);
    if (empty())
       myFront = myBack = newptr;
    else
@@ -113,6 +113,16 @@ QueueElement Queue::front() const
    }
 }
 
+int Queue::getArrivalTimeFromFront() const
+{
+    if (!empty())
+        return (myFront->arrivalTime);
+    else
+    {
+        return -1;
+    }
+}
+
 //--- Definition of dequeue()
 void Queue::dequeue()
 {
@@ -130,20 +140,61 @@ void Queue::dequeue()
 
 void Queue::move_to_front(const QueueElement & key)
 {
-  Queue::NodePointer prevPtr = 0;
-  for (Queue::NodePointer ptr = myFront; ptr != 0; ptr = ptr->next) 
-  {
-    if (ptr->data == key) {
-      if(ptr == myBack)
-        myBack = prevPtr;
-      prevPtr->next = ptr->next;
-      ptr->next = myFront;
-      myFront = ptr;
-
-      prevPtr = NULL;
-      ptr = NULL;
-      break;
+    Queue::NodePointer prevPtr = 0;
+    for (Queue::NodePointer ptr = myFront; ptr != 0; ptr = ptr->next)
+    {
+        if (ptr->data == key) {
+            if(ptr == myBack)
+                myBack = prevPtr;
+            prevPtr->next = ptr->next;
+            ptr->next = myFront;
+            myFront = ptr;
+            
+            prevPtr = NULL;
+            ptr = NULL;
+            break;
+        }
+        prevPtr = ptr;
     }
-    prevPtr = ptr;
-  }
+}
+
+void Queue::merge_two_queues( Queue & q2)
+{
+    Queue::NodePointer refPtr = myFront;
+    Queue::NodePointer q1PrevPtr = 0;
+    
+    Queue::NodePointer q2Ptr = q2.myFront;
+    
+    while(q2Ptr != 0)
+    {
+        Queue::NodePointer nextPtr = q2Ptr->next;
+        if(empty()){
+            // TODO: equate q1 to q2
+        }else {
+            for(Queue::NodePointer q1Ptr = refPtr; q1Ptr != 0; q1Ptr = q1Ptr->next)
+            {
+                if(q2Ptr->data < q1Ptr->data)
+                {
+                    q2.myFront = q2Ptr->next;
+                    
+                    q2Ptr->next = q1Ptr;
+                    if(q1PrevPtr == 0){
+                        myFront = q2Ptr;
+                    } else {
+                        q1PrevPtr->next = q2Ptr;
+                    }
+                    refPtr = q1Ptr;
+                    q1PrevPtr = q2Ptr;
+                    break;
+                } else if(q1Ptr->next == 0) {
+                    myBack->next = q2.myFront;
+                    myBack = q2.myBack;
+                }
+                q1PrevPtr = q1Ptr;
+            }
+        }
+        q2Ptr = nextPtr;
+    }
+    q1PrevPtr = NULL;
+    refPtr = NULL;
 }

@@ -50,6 +50,12 @@ int main(void)
     q2.enqueue(2);
     q2.enqueue(99);
     q2.enqueue(202);
+    print(q2);
     q1.merge_two_queues(q2);
+    cout << "Merged Queue: " << endl;
+    print(q1);
+    cout << "Old Queue: " << endl;
+    print(q2);
+    cout << "Queue q2 empty? " << q2.empty() << endl;
     return 0;
 }
