@@ -169,6 +169,8 @@ void Queue::merge_two_queues( Queue & q2)
     {
         Queue::NodePointer nextPtr = q2Ptr->next;
         if(empty()){
+            myFront = q2.myFront;
+            myBack = q2.myBack;
         }else {
             for(Queue::NodePointer q1Ptr = refPtr; q1Ptr != 0; q1Ptr = q1Ptr->next)
             {
