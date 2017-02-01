@@ -14,7 +14,7 @@ void print(Queue q);
 
 int main(void)
 {
-//    testPart1();
+    testPart1();
     testPart2();
     
     AirportSim airportSimulator;
