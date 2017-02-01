@@ -17,6 +17,9 @@ int main(void)
 //    testPart1();
     testPart2();
     
+    AirportSim airportSimulator;
+    airportSimulator.run();
+    
     return 0;
 }
 
@@ -89,8 +92,15 @@ void testPart1()
 
 void testPart2()
 {
-    AirportSim airportSimulator;
-    airportSimulator.run();
+    AirportSim airportSim1 = AirportSim(3, 2, 0, 10, 60);
+    AirportSim airportSim2 = AirportSim(3, 2, 60, 10, 0);
+    AirportSim airportSim3 = AirportSim(3, 2, 60, 0, 60);
+    AirportSim airportSim4 = AirportSim(3, 2, 30, 10, 30);
+    
+    airportSim1.run();
+    airportSim2.run();
+    airportSim3.run();
+    airportSim4.run();
 }
 
 void print(Queue q)

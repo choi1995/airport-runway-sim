@@ -102,7 +102,7 @@ void AirportSim::randomTrafficGenerator(const int currentTime)
         if(landingQueueSize>maxPlanesInLandingQueue){
             maxPlanesInLandingQueue=landingQueueSize;
         }
-        if(rand() % 100 < 10)
+        if(rand() % 100 < 10)  // probability of emergency landing = 10%
             randomEmergencyLanding(flightNum);
         else
             cout << "Plane " << flightNum << " wants to land; added to landing queue; " << landingQueueSize << " in queue" << endl;
@@ -115,7 +115,7 @@ void AirportSim::randomTrafficGenerator(const int currentTime)
         if(takeoffQueueSize>maxPlanesInTakeoffQueue){
             maxPlanesInTakeoffQueue=takeoffQueueSize;
         }
-        if(rand() % 100 < 10)
+        if(rand() % 100 < 10)  // probability of emergency takeoff = 10%
             randomEmergencyTakeoff(flightNum);
         else
             cout << "Plane " << flightNum << " wants to take off; added to takeoff queue; " << takeoffQueueSize << " in queue" << endl;

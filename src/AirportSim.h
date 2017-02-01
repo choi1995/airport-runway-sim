@@ -112,7 +112,7 @@ private:
     void randomEmergencyLanding(const int flightNum);
     /*-----------------------------------------------------------------------
      Randomly creates an emergency landing request. If a request is received, a plane will be 
-     moved to the front of the landing queue.
+     moved to the front of the landing queue. 
      -----------------------------------------------------------------------*/
 
     void randomEmergencyTakeoff(const int flightNum);
