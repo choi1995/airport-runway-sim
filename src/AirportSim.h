@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "LQueue.h"
+#include <cstdlib>>
 using namespace std;
 
 class AirportSim

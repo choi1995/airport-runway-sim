@@ -7,7 +7,6 @@
 //
 
 #include "AirportSim.h"
-#include <cstdlib>
 
 AirportSim::AirportSim()
 {
