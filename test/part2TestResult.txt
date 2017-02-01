@@ -1,0 +1,277 @@
+
+**********************************************
+*          AIRPORT RUNWAY SIMULATION         *
+**********************************************
+
+******************************************
+Time = 0
+Plane 1000 wants to take off; added to takeoff queue; 1 in queue
+Taking off: Plane 1000
+******************************************
+Time = 1
+Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight 1001.
+Flight 1001 added to the front of the takeoff queue; 1 in queue.
+Taking off: Plane 1000
+******************************************
+Time = 2
+Takeoff complete; 1 in queue
+Plane 1002 wants to take off; added to takeoff queue; 2 in queue
+Taking off: Plane 1001
+******************************************
+Time = 3
+Plane 1003 wants to take off; added to takeoff queue; 2 in queue
+Taking off: Plane 1001
+******************************************
+Time = 4
+Takeoff complete; 2 in queue
+Plane 1004 wants to take off; added to takeoff queue; 3 in queue
+Taking off: Plane 1002
+******************************************
+Time = 5
+Plane 1005 wants to take off; added to takeoff queue; 3 in queue
+Taking off: Plane 1002
+******************************************
+Time = 6
+Takeoff complete; 3 in queue
+Plane 1006 wants to take off; added to takeoff queue; 4 in queue
+Taking off: Plane 1003
+******************************************
+Time = 7
+Plane 1007 wants to take off; added to takeoff queue; 4 in queue
+Taking off: Plane 1003
+******************************************
+Time = 8
+Takeoff complete; 4 in queue
+Plane 1008 wants to take off; added to takeoff queue; 5 in queue
+Taking off: Plane 1004
+******************************************
+Time = 9
+Plane 1009 wants to take off; added to takeoff queue; 5 in queue
+Taking off: Plane 1004
+
+STATISTICS
+Maximum number of planes in Landing queue was: 0
+Average Minutes spent waiting to land: No Planes Landed
+Maximum number of planes in Takeoff queue was: 5
+Average Minutes spent waiting to takeoff: 2
+End of Program
+
+**********************************************
+*          AIRPORT RUNWAY SIMULATION         *
+**********************************************
+
+******************************************
+Time = 0
+Plane 1000 wants to land; added to landing queue; 1 in queue
+Landing: Plane 1000
+******************************************
+Time = 1
+Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight 1001.
+Flight 1001 added to the front of the landing queue; 1 in queue.
+Landing: Plane 1000
+******************************************
+Time = 2
+Plane 1002 wants to land; added to landing queue; 2 in queue
+Landing: Plane 1000
+******************************************
+Time = 3
+Landing complete; 2 in queue
+Plane 1003 wants to land; added to landing queue; 3 in queue
+Landing: Plane 1001
+******************************************
+Time = 4
+Plane 1004 wants to land; added to landing queue; 3 in queue
+Landing: Plane 1001
+******************************************
+Time = 5
+Plane 1005 wants to land; added to landing queue; 4 in queue
+Landing: Plane 1001
+******************************************
+Time = 6
+Landing complete; 4 in queue
+Plane 1006 wants to land; added to landing queue; 5 in queue
+Landing: Plane 1002
+******************************************
+Time = 7
+Plane 1007 wants to land; added to landing queue; 5 in queue
+Landing: Plane 1002
+******************************************
+Time = 8
+Plane 1008 wants to land; added to landing queue; 6 in queue
+Landing: Plane 1002
+******************************************
+Time = 9
+Landing complete; 6 in queue
+Plane 1009 wants to land; added to landing queue; 7 in queue
+Landing: Plane 1003
+
+STATISTICS
+Maximum number of planes in Landing queue was: 7
+Average Minutes spent waiting to land: 3
+Maximum number of planes in Takeoff queue was: 0
+Average Minutes spent waiting to takeoff: No Planes Took off
+End of Program
+
+**********************************************
+*          AIRPORT RUNWAY SIMULATION         *
+**********************************************
+
+
+STATISTICS
+Maximum number of planes in Landing queue was: 0
+Average Minutes spent waiting to land: No Planes Landed
+Maximum number of planes in Takeoff queue was: 0
+Average Minutes spent waiting to takeoff: No Planes Took off
+End of Program
+
+**********************************************
+*          AIRPORT RUNWAY SIMULATION         *
+**********************************************
+
+******************************************
+Time = 0
+******************************************
+Time = 1
+Plane 1000 wants to land; added to landing queue; 1 in queue
+Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight 1001.
+Flight 1001 added to the front of the takeoff queue; 1 in queue.
+Landing: Plane 1000
+******************************************
+Time = 2
+Landing: Plane 1000
+******************************************
+Time = 3
+Plane 1002 wants to land; added to landing queue; 1 in queue
+Plane 1003 wants to take off; added to takeoff queue; 2 in queue
+Landing: Plane 1000
+******************************************
+Time = 4
+Landing complete; 1 in queue
+Plane 1004 wants to take off; added to takeoff queue; 3 in queue
+Landing: Plane 1002
+******************************************
+Time = 5
+Landing: Plane 1002
+******************************************
+Time = 6
+Landing: Plane 1002
+******************************************
+Time = 7
+Landing complete; 0 in queue
+Plane 1005 wants to land; added to landing queue; 1 in queue
+Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight 1006.
+Flight 1006 added to the front of the takeoff queue; 4 in queue.
+Landing: Plane 1005
+******************************************
+Time = 8
+Landing: Plane 1005
+******************************************
+Time = 9
+Plane 1007 wants to land; added to landing queue; 1 in queue
+Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight 1008.
+Flight 1008 added to the front of the takeoff queue; 5 in queue.
+Landing: Plane 1005
+
+STATISTICS
+Maximum number of planes in Landing queue was: 1
+Average Minutes spent waiting to land: 0.333333
+Maximum number of planes in Takeoff queue was: 5
+Average Minutes spent waiting to takeoff: No Planes Took off
+End of Program
+
+**********************************************
+*          AIRPORT RUNWAY SIMULATION         *
+**********************************************
+
+Time for a plane to land (in minutes): 3
+Time for a plane to takeoff (in minutes): 2
+Landing rate (planes per hour): 50
+Takeoff rate (planes per hour): 45
+How long to run the simulation: 15
+******************************************
+Time = 0
+Plane 1000 wants to take off; added to takeoff queue; 1 in queue
+Taking off: Plane 1000
+******************************************
+Time = 1
+Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight 1001.
+Flight 1001 added to the front of the landing queue; 1 in queue.
+Plane 1002 wants to take off; added to takeoff queue; 1 in queue
+Taking off: Plane 1000
+******************************************
+Time = 2
+Takeoff complete; 1 in queue
+Plane 1003 wants to land; added to landing queue; 2 in queue
+Plane 1004 wants to take off; added to takeoff queue; 2 in queue
+Landing: Plane 1001
+******************************************
+Time = 3
+Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight 1005.
+Flight 1005 added to the front of the landing queue; 2 in queue.
+Landing: Plane 1001
+******************************************
+Time = 4
+Plane 1006 wants to land; added to landing queue; 3 in queue
+Landing: Plane 1001
+******************************************
+Time = 5
+Landing complete; 3 in queue
+Plane 1007 wants to land; added to landing queue; 4 in queue
+Landing: Plane 1005
+******************************************
+Time = 6
+Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight 1008.
+Flight 1008 added to the front of the landing queue; 4 in queue.
+Plane 1009 wants to take off; added to takeoff queue; 3 in queue
+Landing: Plane 1005
+******************************************
+Time = 7
+Plane 1010 wants to land; added to landing queue; 5 in queue
+Plane 1011 wants to take off; added to takeoff queue; 4 in queue
+Landing: Plane 1005
+******************************************
+Time = 8
+Landing complete; 5 in queue
+Plane 1012 wants to land; added to landing queue; 6 in queue
+Plane 1013 wants to take off; added to takeoff queue; 5 in queue
+Landing: Plane 1008
+******************************************
+Time = 9
+Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight 1014.
+Flight 1014 added to the front of the landing queue; 6 in queue.
+Landing: Plane 1008
+******************************************
+Time = 10
+Plane 1015 wants to land; added to landing queue; 7 in queue
+Plane 1016 wants to take off; added to takeoff queue; 6 in queue
+Landing: Plane 1008
+******************************************
+Time = 11
+Landing complete; 7 in queue
+Plane 1017 wants to land; added to landing queue; 8 in queue
+Plane 1018 wants to take off; added to takeoff queue; 7 in queue
+Landing: Plane 1014
+******************************************
+Time = 12
+Plane 1019 wants to land; added to landing queue; 8 in queue
+Landing: Plane 1014
+******************************************
+Time = 13
+Plane 1020 wants to land; added to landing queue; 9 in queue
+Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight 1021.
+Flight 1021 added to the front of the takeoff queue; 8 in queue.
+Landing: Plane 1014
+******************************************
+Time = 14
+Landing complete; 9 in queue
+Plane 1022 wants to land; added to landing queue; 10 in queue
+Plane 1023 wants to take off; added to takeoff queue; 9 in queue
+Landing: Plane 1003
+
+STATISTICS
+Maximum number of planes in Landing queue was: 10
+Average Minutes spent waiting to land: 3.8
+Maximum number of planes in Takeoff queue was: 9
+Average Minutes spent waiting to takeoff: 0
+End of Program
+Program ended with exit code: 0
