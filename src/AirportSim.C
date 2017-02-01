@@ -102,18 +102,24 @@ void AirportSim::randomTrafficGenerator(const int currentTime)
         if(landingQueueSize>maxPlanesInLandingQueue){
             maxPlanesInLandingQueue=landingQueueSize;
         }
-        cout << "Plane " << flightNum << " wants to land; added to landing queue; " << landingQueueSize << " in queue" << endl;
+        if(rand() % 100 < 10)
+            randomEmergencyLanding(flightNum);
+        else
+            cout << "Plane " << flightNum << " wants to land; added to landing queue; " << landingQueueSize << " in queue" << endl;
+        
         flightNum++;
     }
     if(takeoffNum < takeoffRate) {
         takeoffQueue.enqueue(flightNum, currentTime);
-        
         takeoffQueueSize++;
         if(takeoffQueueSize>maxPlanesInTakeoffQueue){
             maxPlanesInTakeoffQueue=takeoffQueueSize;
         }
+        if(rand() % 100 < 10)
+            randomEmergencyTakeoff(flightNum);
+        else
+            cout << "Plane " << flightNum << " wants to take off; added to takeoff queue; " << takeoffQueueSize << " in queue" << endl;
         
-        cout << "Plane " << flightNum << " wants to take off; added to takeoff queue; " << takeoffQueueSize << " in queue" << endl;
         flightNum++;
     }
 }
@@ -184,6 +190,20 @@ void AirportSim::printBanner()
     cout << "*          AIRPORT RUNWAY SIMULATION         *" << endl;
     cout << "**********************************************" << endl;
     cout << endl;
+}
+
+void AirportSim::randomEmergencyLanding(const int flightNum)
+{
+        landingQueue.move_to_front(flightNum);
+        cout << "Trump became president resulting in an influx of flights from America. Emergency Landing Requested from Flight " << flightNum << "." << endl;
+        cout << "Flight " << flightNum << " added to the front of the landing queue; " << landingQueueSize << " in queue." << endl;
+}
+
+void AirportSim::randomEmergencyTakeoff(const int flightNum)
+{
+        takeoffQueue.move_to_front(flightNum);
+        cout << "Rattle snakes swarmed the airport. Emergency Takeoff Requested from Flight " << flightNum << "." <<endl;
+        cout << "Flight " << flightNum << " added to the front of the takeoff queue; " << takeoffQueueSize << " in queue." << endl;
 }
 
 

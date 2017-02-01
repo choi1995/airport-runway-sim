@@ -108,6 +108,18 @@ private:
     /*-----------------------------------------------------------------------
      Prints a nice looking banner for the application
      -----------------------------------------------------------------------*/
+    
+    void randomEmergencyLanding(const int flightNum);
+    /*-----------------------------------------------------------------------
+     Randomly creates an emergency landing request. If a request is received, a plane will be 
+     moved to the front of the landing queue.
+     -----------------------------------------------------------------------*/
+
+    void randomEmergencyTakeoff(const int flightNum);
+    /*-----------------------------------------------------------------------
+     Randomly creates an emergency takeoff request. If a request is received, a plane will be
+     moved to the front of the takeoff queue.
+     -----------------------------------------------------------------------*/
 };
 
 
