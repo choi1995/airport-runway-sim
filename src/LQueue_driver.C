@@ -94,4 +94,6 @@ void testPart2()
 }
 
 void print(Queue q)
-{ q.display(cout); }
+{
+    q.display(cout);
+}

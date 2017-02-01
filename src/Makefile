@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-Wall -O3
 PROG=LQueue_driver
-OBJS=LQueue_driver.o LQueue.o
+OBJS=LQueue_driver.o LQueue.o AirportSim.o
 
 runway: $(OBJS)
 	$(CC) -o $(PROG) $(OBJS)
@@ -11,7 +11,7 @@ runway: $(OBJS)
 
 LQueue.o:	LQueue.h
 
-LQueue_driver.o:	LQueue_driver.C LQueue.o LQueue.h
+LQueue_driver.o:	LQueue_driver.C LQueue.o LQueue.h AirportSim.h AirportSim.o
 
 clean:
 	rm *.o core
