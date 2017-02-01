@@ -25,6 +25,9 @@ AirportSim::AirportSim(int tland, int ttake, int landingRate, int simDuration, i
 void AirportSim::run()
 {
     srand(time(NULL));
+    
+    printBanner();
+    
     if(simDuration == -1 ){
         askForParameters();
     }
@@ -173,3 +176,14 @@ void AirportSim::generateStats()
         cout << ((double) totalTakeoffWaitingTime)/totalPlanesTakenOff << endl;
     }
 }
+
+void AirportSim::printBanner()
+{
+    cout << endl;
+    cout << "**********************************************" << endl;
+    cout << "*          AIRPORT RUNWAY SIMULATION         *" << endl;
+    cout << "**********************************************" << endl;
+    cout << endl;
+}
+
+

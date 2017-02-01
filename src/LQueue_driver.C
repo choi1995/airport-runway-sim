@@ -2,15 +2,25 @@
  Driver program to test the Queue class.
  ----------------------------------------------------------------------*/
 
-#include <iostream>
-#include "LQueue.h"
+#include "AirportSim.h"
+
 using namespace std;
 
+void testPart1();
 
-void print(Queue q)
-{ q.display(cout); }
+void testPart2();
+
+void print(Queue q);
 
 int main(void)
+{
+    testPart1();
+    testPart2();
+    
+    return 0;
+}
+
+void testPart1()
 {
     Queue q1;
     cout << "Queue created.  Empty? " << boolalpha << q1.empty() << endl;
@@ -64,7 +74,7 @@ int main(void)
     print(q2);
     cout << "Queue q2 empty? " << q2.empty() << endl;
     
-     cout<<endl<< "********** Testing for Move_to_front **********"<<endl;
+    cout<<endl<< "********** Testing for Move_to_front **********"<<endl;
     cout<<"Queue to be searched(q1)"<<endl;
     print(q1);
     
@@ -73,9 +83,15 @@ int main(void)
     q1.move_to_front(30);
     q1.move_to_front(600);
     
-    cout<<"q1 now: "<<endl;
+    cout << "q1 now: " << endl;
     print(q1);
-    
-   
-    return 0;
 }
+
+void testPart2()
+{
+    AirportSim airportSimulator;
+    airportSimulator.run();
+}
+
+void print(Queue q)
+{ q.display(cout); }

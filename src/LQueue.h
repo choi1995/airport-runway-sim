@@ -32,15 +32,15 @@ class Queue
      to the front of the same queue.
      
      Precondition:  Queue is nonempty.
-     Postcondition: A new node is added if the keyvalue has been found
+     Postcondition: if a node is found, it is moved to the front of the queue.
      -----------------------------------------------------------------------*/
     void merge_two_queues( Queue &q2);
     /*-----------------------------------------------------------------------
-     Search through a queue for a particular key value, and if found, move the node
-     to the front of the same queue.
+     A function that takes two queues that are each ordered according to the data field
+     and merges the two queues into one queue whose absolute order of the merged elements is kept.
      
-     Precondition:  Queue is nonempty.
-     Postcondition: A new node is added if the keyvalue has been found
+     Precondition:  Both queues are ordered.
+     Postcondition: All the nodes from queue 2 added to queue 1 and ordered. Queue 2 will be empty.
      -----------------------------------------------------------------------*/
 
   /***** Constructors *****/
